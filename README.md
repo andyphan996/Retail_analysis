@@ -13,16 +13,16 @@
 - Thương mại điện tử (E-commerce), Bán lẻ (Retail), Phân tích kinh doanh (Business Analytics).
 
 ### 4. Danh sách các đặc trưng (Features)
-1. **InvoiceNo:** Mã hóa đơn (Số nguyên 6 chữ số). Nếu bắt đầu bằng 'C', đó là hóa đơn hủy.
+1. **Invoice:** Mã hóa đơn. Nếu bắt đầu bằng 'C', đó là hóa đơn hủy.
 2. **StockCode:** Mã sản phẩm (Định danh riêng cho mỗi mặt hàng).
-3. **Description:** Tên sản phẩm/mặt hàng.
+3. **Description:** Tên hoặc mô tả sản phẩm.
 4. **Quantity:** Số lượng mỗi mặt hàng trên mỗi giao dịch.
 5. **InvoiceDate:** Ngày và giờ tạo hóa đơn.
-6. **UnitPrice:** Đơn giá sản phẩm (Bảng Anh).
-7. **CustomerID:** Mã số khách hàng (Định danh duy nhất cho mỗi khách hàng).
+6. **Price:** Đơn giá sản phẩm (Bảng Anh).
+7. **Customer ID:** Mã số khách hàng (Định danh duy nhất cho mỗi khách hàng).
 8. **Country:** Tên quốc gia nơi khách hàng cư trú.
 
 ### 5. Hạn chế và Khiếm khuyết
-- **Dữ liệu thiếu (Missing values):** Một số lượng lớn bản ghi không có `CustomerID` (khoảng 20-25%). Một số ít thiếu `Description`.
-- **Dữ liệu không hợp lệ:** Có các đơn hàng bị hủy (Invoice bắt đầu bằng 'C') và các dòng dữ liệu có số lượng (`Quantity`) hoặc đơn giá (`UnitPrice`) âm/bằng 0 do lỗi hệ thống hoặc điều chỉnh kho.
+- **Dữ liệu thiếu (Missing values):** Một số lượng lớn bản ghi không có `Customer ID` (khoảng 20-25%). Một số ít thiếu `Description`.
+- **Dữ liệu không hợp lệ:** Có các đơn hàng bị hủy (Invoice bắt đầu bằng 'C') và các dòng dữ liệu có số lượng (`Quantity`) hoặc đơn giá (`Price`) âm/bằng 0 do lỗi hệ thống hoặc điều chỉnh kho.
 - **Nhiễu:** Có các mã StockCode không phải là hàng hóa (ví dụ: 'DOT' - Dotcom postage, 'POST' - Bưu phí).

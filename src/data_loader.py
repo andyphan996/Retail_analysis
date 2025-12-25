@@ -3,7 +3,6 @@ import pandas as pd
 def load_data(file_path):
     try:
         df = pd.read_csv(file_path, encoding='ISO-8859-1')
-        print(f"--- Đã tải dữ liệu thành công từ {file_path} ---")
         return df
     except Exception as e:
         print(f"Lỗi khi đọc file: {e}")
@@ -21,8 +20,7 @@ def dataset_overview(df):
         "data_types": df.dtypes.to_dict(),
         "missing_values": df.isnull().sum().to_dict()
     }
-
-    print("\n=== TỔNG QUAN DỮ LIỆU ===")
+    print("\nTỔNG QUAN DỮ LIỆU ")
     print(f"Số dòng: {info['num_rows']}")
     print(f"Số cột: {info['num_cols']}")
     print("-" * 30)
