@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-# ??m b?o th? m?c outputs/tables t?n t?i
+# ??m b?o outputs/tables t?n t?i
 TABLES_DIR = Path("outputs") / "tables"
 TABLES_DIR.mkdir(parents=True, exist_ok=True)
 
