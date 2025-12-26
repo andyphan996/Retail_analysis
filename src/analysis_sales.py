@@ -5,7 +5,7 @@ import os
 def revenue_over_time(df):
     """Tính doanh thu theo tháng"""
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
-    df['Revenue'] = df['UnitPrice'] * df['Quantity']
+    df['Revenue'] = df['Price'] * df['Quantity']
     revenue_month = df.resample('M', on='InvoiceDate')['Revenue'].sum().reset_index()
     output_path = 'outputs/tables/revenue_by_month.csv'
     revenue_month.to_csv(output_path, index=False)
@@ -19,7 +19,7 @@ def revenue_by_year(df):
 
 
 def revenue_by_week(df):
-    """Doanh thu theo ngày (như yêu cầu mô tả của bạn)"""
+    """Doanh thu theo ngày """
     revenue_day = df.groupby(df['InvoiceDate'].dt.date)['Revenue'].sum().reset_index()
     return revenue_day
 

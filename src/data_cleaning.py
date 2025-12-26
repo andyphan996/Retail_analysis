@@ -39,7 +39,7 @@ def save_clean_data(df, output_path):
 # --- Pipeline thực thi ---
 if __name__ == "__main__":
     # Đọc dữ liệu
-    df = pd.read_csv('data/processed/online_retail_II.csv')
+    df = pd.read_csv('data/proccessed/online_retail_II.csv')
 
     # Các bước xử lý
     df = clean_missing_values(df)
@@ -47,5 +47,5 @@ if __name__ == "__main__":
     df = create_features(df)
 
     # Lưu file vào đường dẫn yêu cầu
-    output_file = 'data/processed/online_retail_clean.csv'
+    output_file = 'data/proccessed/online_retail_clean.csv'
     save_clean_data(df, output_file)

@@ -1,12 +1,22 @@
 import pandas as pd
 
-def load_data(file_path):
-    try:
-        df = pd.read_csv(file_path, encoding='ISO-8859-1')
-        return df
-    except Exception as e:
-        print(f"Lỗi khi đọc file: {e}")
-        return None
+import pandas as pd
+from pathlib import Path
+
+DATA_PATH = Path("data") / "raw" / "online_retail_II.xlsx"
+def load_data():
+    """Load all sheets from Excel and merge"""
+    xls = pd.ExcelFile(DATA_PATH)
+    df_list = []
+
+    for sheet in xls.sheet_names:
+        print(f"Loading sheet: {sheet}")
+        df = pd.read_excel(xls, sheet_name=sheet)
+        df["SourceSheet"] = sheet   # optional: để trace nguồn
+        df_list.append(df)
+
+    df_all = pd.concat(df_list, ignore_index=True)
+    return df_all
 
 def dataset_overview(df):
 
@@ -35,7 +45,6 @@ def dataset_overview(df):
     return info
 
 if __name__ == "__main__":
-    path = "data/processed/online_retail_II.csv"
-    df = load_data(path)
+    df = load_data()
     if df is not None:
         overview = dataset_overview(df)
