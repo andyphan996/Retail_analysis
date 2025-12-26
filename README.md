@@ -26,3 +26,9 @@
 - **Dữ liệu thiếu (Missing values):** Một số lượng lớn bản ghi không có `Customer ID` (khoảng 20-25%). Một số ít thiếu `Description`.
 - **Dữ liệu không hợp lệ:** Có các đơn hàng bị hủy (Invoice bắt đầu bằng 'C') và các dòng dữ liệu có số lượng (`Quantity`) hoặc đơn giá (`Price`) âm/bằng 0 do lỗi hệ thống hoặc điều chỉnh kho.
 - **Nhiễu:** Có các mã StockCode không phải là hàng hóa (ví dụ: 'DOT' - Dotcom postage, 'POST' - Bưu phí).
+
+# cài đặt và chạy
+Data set này không có sẵn trong repo vì giới hạn về kích thướng, dưới đây là hướng dẫn cài đặt
+
+Tải về bằng đường link ở phía trên sau đó extract và chứa vào path dưới đây:
+data/raw/"thư mục sẽ nằm ở đây"
