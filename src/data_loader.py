@@ -5,14 +5,12 @@ from pathlib import Path
 
 DATA_PATH = Path("data") / "raw" / "online_retail_II.xlsx"
 def load_data():
-    """Load all sheets from Excel and merge"""
     xls = pd.ExcelFile(DATA_PATH)
     df_list = []
-
     for sheet in xls.sheet_names:
         print(f"Loading sheet: {sheet}")
         df = pd.read_excel(xls, sheet_name=sheet)
-        df["SourceSheet"] = sheet   # optional: để trace nguồn
+        df["SourceSheet"] = sheet   
         df_list.append(df)
 
     df_all = pd.concat(df_list, ignore_index=True)

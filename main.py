@@ -32,6 +32,7 @@ from src.visualization import (
 )
 
 def main():
+    
     print("START RETAIL ANALYSIS PIPELINE")
     #load data
     print("Loading data...")
@@ -73,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
