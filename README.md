@@ -28,7 +28,5 @@
 - **Nhiễu:** Có các mã StockCode không phải là hàng hóa (ví dụ: 'DOT' - Dotcom postage, 'POST' - Bưu phí).
 
 # cài đặt và chạy
-Data set này không có sẵn trong repo vì giới hạn về kích thướng, dưới đây là hướng dẫn cài đặt
+pip install openpyxl
 
-Tải về bằng đường link ở phía trên sau đó extract và chứa vào path dưới đây:
-data/raw/"thư mục sẽ nằm ở đây"
